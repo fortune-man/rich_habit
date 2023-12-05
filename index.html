@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>부자습관</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+            font-family: 'Roboto', sans-serif;
+        }
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+        }
+        .input-field {
+            margin: 20px 0;
+        }
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 24px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>부자습관</h1>
+        <div class="input-field">
+            <label for="pre-sales">마케팅 업체 사용 전 매출을 입력해주세요 😀</label>
+            <input type="number" id="pre-sales" name="pre-sales">
+        </div>
+        <div class="input-field">
+            <label for="post-sales">마케팅 업체 사용 후 매출을 입력해주세요 😀</label>
+            <input type="number" id="post-sales" name="post-sales">
+        </div>
+        <div class="input-field">
+            <label for="investment">마케팅에 투자한 비용을 입력해주세요 😀</label>
+            <input type="number" id="investment" name="investment">
+        </div>
+        <button onclick="calculateROI()">수익률 계산</button>
+        <div id="result"></div>
+    </div>
+    <script>
+        function calculateROI() {
+            var preSales = document.getElementById('pre-sales').value;
+            var postSales = document.getElementById('post-sales').value;
+            var investment = document.getElementById('investment').value;
+            var roi = ((postSales - preSales) / investment) * 100;
+            document.getElementById('result').innerHTML = '수익률: ' + roi.toFixed(2) + '%';
+        }
+    </script>
+</body>
+</html>
