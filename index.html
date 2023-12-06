@@ -38,20 +38,20 @@
 </head>
 <body>
     <div class="container">
-        <h1>부자습관</h1>
+        <h2>이 마케팅이 정말 도움되나..? 🤔</h2>
         <div class="input-field">
-            <label for="pre-sales">마케팅 업체 사용 전 매출을 입력해주세요 😀</label>
+            <label for="pre-sales">마케팅 회사에 지출 전 매출은..? 🤔</label>
             <input type="number" id="pre-sales" name="pre-sales">
         </div>
         <div class="input-field">
-            <label for="post-sales">마케팅 업체 사용 후 매출을 입력해주세요 😀</label>
-            <input type="number" id="post-sales" name="post-sales">
-        </div>
-        <div class="input-field">
-            <label for="investment">마케팅에 투자한 비용을 입력해주세요 😀</label>
+            <label for="investment">마케팅 회사가 요구한 비용은..? 🤔</label>
             <input type="number" id="investment" name="investment">
         </div>
-        <button onclick="calculateROI()">수익률 계산</button>
+        <div class="input-field">
+            <label for="post-sales">마케팅 회사에 지출 후 매출은..? 🤔</label>
+            <input type="number" id="post-sales" name="post-sales">
+        </div>
+        <button onclick="calculateROI()">정말 도움되는지 봐야겠어 🔥</button>
         <div id="result"></div>
     </div>
     <script>
@@ -60,7 +60,7 @@
             var postSales = document.getElementById('post-sales').value;
             var investment = document.getElementById('investment').value;
             var roi = ((postSales - preSales) / investment) * 100;
-            document.getElementById('result').innerHTML = '수익률: ' + roi.toFixed(2) + '%';
+            document.getElementById('result').innerHTML = '💡실제 수익률은 ' + roi.toFixed(2) + '%' + '입니다';
         }
     </script>
 </body>
